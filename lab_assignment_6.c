@@ -13,16 +13,18 @@ int search(int numbers[], int low, int high, int value)
 	int mid;
 	if(low <= high) {
 		mid = (low + high) / 2;
-		if( numbers[mid] == value) {
+		if(numbers[mid] == value ) {
 			return mid;
+		} else if (value < numbers[mid]) {
+			return search(numbers, low, mid - 1, value);
 		} else if (value > numbers[mid]) {
-			low = mid + 1;
+			return search (numbers, mid + 1, high, value);
 		} else {
-			high = mid - 1;
 		}
 	}
 	return -1;
 }
+	
 
 void printArray(int numbers[], int sz)
 {
