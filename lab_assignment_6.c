@@ -3,13 +3,7 @@
 
 int search(int numbers[], int low, int high, int value) 
 {
-	//code here
-	//write a recursive binary search algorithim
-	//start with both high and low find the midpoint
-	//if the value is lower then the new midpoint set 
-	// the new max to the midpoint 
-	//if higher do the opposite
-	//we can assume the array is sorted?
+	//recursive binary search function
 	int mid;
 	if(low <= high) {
 		mid = (low + high) / 2;
