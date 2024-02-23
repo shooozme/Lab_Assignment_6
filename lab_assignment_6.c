@@ -2,6 +2,26 @@
 
 int search(int numbers[], int low, int high, int value) 
 {
+	//code here
+	//write a recursive binary search algorithim
+	//start with both high and low find the midpoint
+	//if the value is lower then the new midpoint set 
+	// the new max to the midpoint 
+	//if higher do the opposite
+	//we can assume the array is sorted?
+	int mid;
+	if(low <= high) {
+		mid = (low + high) / 2;
+		if( mid == value) {
+			return mid;
+		} else if (mid > high) {
+			high = mid;
+			search(numbers, low, high, value);
+		} else if (low > mid) {
+			low = mid;
+			search(numbers, low, high, value);
+		}
+	}
 	return -1;
 }
 
